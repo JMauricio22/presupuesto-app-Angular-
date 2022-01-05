@@ -1,0 +1,40 @@
+<form (ngSubmit)="agregarRegistro(f)" #f="ngForm">
+  <div class="agregar">
+    <div class="agregar_contenedor">
+      <select
+        class="agregar_tipo"
+        name="opcion"
+        [(ngModel)]="opcion"
+        [ngClass]="{ redfocus: opcion === 'egr' }"
+      >
+        <option value="ing" selected>+</option>
+        <option value="egr">-</option>
+      </select>
+      <input
+        name="descripcion"
+        type="text"
+        class="agregar_descripcion"
+        placeholder="Agregar Descripción"
+        [(ngModel)]="descripcion"
+        [ngClass]="{ redfocus: opcion === 'egr' }"
+        required
+      />
+      <input
+        name="valor"
+        type="number"
+        class="agregar_valor"
+        placeholder="Valor"
+        [(ngModel)]="valor"
+        [ngClass]="{ redfocus: opcion === 'egr' }"
+        required
+      />
+      <button
+        type="submit"
+        class="agregar_btn"
+        [ngClass]="{ red: opcion === 'egr' }"
+      >
+        <i class="ion-ios-checkmark-outline"></i>
+      </button>
+    </div>
+  </div>
+</form>
